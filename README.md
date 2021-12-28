@@ -1,2 +1,15 @@
 # AWS-Cloud-Security-Recoverability-in-AWS
-Applied AWS CloudFormation to create highly-available and fault-tolerant solutions to common use cases. By building a multi-availability zone, multi-region database, I focus on database management and how applications can take advantage of distributed infrastructure. I demonstrate the capability and simplicity of cloud migration for your primary database, successfully relocating from one geographical region to another. Similarly, I planned and created a versioned website and demonstrated how it is protected from unexpected conditions, chaos engineering, or malicious disruption. Established vulnerability assessments and made sure to underline availability, security, and operational excellence for enterprise applications when something or someone intends to disrupt your everyday operations.
+
+This is the first major project in Udacity AWS Cloud Architect Nanodegree.
+
+Project Overview
+
+In this project, you will build a multi-availability zone, multi-region database. You will demonstrate how applications can use this distributed infrastructure and migrate your primary database from one geographical region to another. You will also create a versioned website and demonstrate how it is protected from accidental or
+malicious disruption, with an ability to turn-back-the-clock when something disrupts your normal operations.
+
+Project Files
+
+    cloudformation: This folder contains the CloudFormation template.
+    s3: This folder contains artifacts of static website.
+    screenshots: This folder contains all the screenshots taken at time of doing project.
+    estimates.md: This file explains the RPO and RTO for the project setup.
