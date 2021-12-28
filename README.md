@@ -10,7 +10,5 @@ You will use a pre-made CloudFormation template to get you started. This will al
 
 Project Files
 
-    CloudFormation template.
-    s3 static website.
     screenshots containing all the relevant documented.
     estimates.txt explains loosely the RPO and RTO for our project setup.
