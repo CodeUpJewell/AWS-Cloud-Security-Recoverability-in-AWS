@@ -1,0 +1,11 @@
+    Minimum RTO for a single AZ outage = 10 minutes 
+Our fail over process will take over, if we have a single AZ outage in our primary availability zones(N. Virginia). Our read replica in N. California Availability Zones will be promoted to the primary. We will work to fix the original primary and service should resume for that AZ within 15 minutes.
+
+    Minimum RTO for a single region outage  = 45 minutes
+If we have a single region outage in our primary region, US East (Northern Virginia) , our read replica in US West (Northern California) region will be promoted to the primary. We estimate it will take about 45 minutes to get the original primary region back up and running.
+
+    Minimum RPO for a single AZ outage = 15 minutes
+Our fail over process will take over, if we have a single AZ outage in our primary availability zones(N. Virginia). Our read replica in N. California Availability Zones will be promoted to the primary. We will work to fix the original primary but expect a short lost of data(15 minutes).
+
+    Minimum RPO for a single region outage = 1 hour
+If we have a single region outage in our primary region, US East (Northern Virginia) , our read replica in US West (Northern California) region will be promoted to the primary. We estimate it will take about 1 hour to get the original primary region back up. We expect an hour or so of data loss.

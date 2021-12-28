@@ -1,0 +1,143 @@
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key"
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-10-1-10-146 ~]$ yum install mariadb
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+You need to be root to perform this command.
+[ec2-user@ip-10-1-10-146 ~]$ sudo -s
+[root@ip-10-1-10-146 ec2-user]# yum install mariadb
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Resolving Dependencies
+--> Running transaction check
+---> Package mariadb.x86_64 1:5.5.68-1.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch          Version                   Repository         Size
+================================================================================
+Installing:
+ mariadb        x86_64        1:5.5.68-1.amzn2          amzn2-core        8.8 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 8.8 M
+Installed size: 49 M
+Is this ok [y/d/N]: y
+Downloading packages:
+mariadb-5.5.68-1.amzn2.x86_64.rpm                          | 8.8 MB   00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1
+  Verifying  : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1
+
+Installed:
+  mariadb.x86_64 1:5.5.68-1.amzn2
+
+Complete!
+[root@ip-10-1-10-146 ec2-user]# mysql -h udacity.c2ifqhujwyst.us-west-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.23 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+MySQL [(none)]> create databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases' at line 1
+MySQL [(none)]> create databases xxx;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases xxx' at line 1
+MySQL [(none)]> CREATE DATABASE mydatabases;
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [(none)]> show
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabases        |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+MySQL [(none)]> exit
+Bye
+[root@ip-10-1-10-146 ec2-user]# mysql -h udacity2.c2ifqhujwyst.us-west-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 54
+Server version: 8.0.23 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> create databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases' at line 1
+MySQL [(none)]> CREATE DATABASES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATABASES' at line 1
+MySQL [(none)]> CREATE DATABASES mydatabases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATABASES mydatabases' at line 1
+MySQL [(none)]> CREATE DATABASE mydatabases;
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [(none)]> [root@ip-10-1-10-146 ec2-user]# mysql -h udacity.c2ifqhujwyst.us-west-1.rds.amaCtrl-C -- exit!
+Aborted
+[root@ip-10-1-10-146 ec2-user]#
+GNU bash, version 4.2.46(2)-release (x86_64-koji-linux-gnu)
+[root@ip-10-1-10-146 ec2-user]# mysql -h udacity2.c2ifqhujwyst.us-west-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.23 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> CREATE DATABASE mydatabase;
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [(none)]> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+6 rows in set (0.00 sec)
+
+MySQL [(none)]>

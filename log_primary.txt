@@ -1,0 +1,281 @@
+[ec2-user@ip-10-2-11-92 ~]$ yum install mariadb
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+You need to be root to perform this command.
+[ec2-user@ip-10-2-11-92 ~]$ sudo -s
+[root@ip-10-2-11-92 ec2-user]# yum install mariadb
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                               | 3.7 kB     00:00
+Resolving Dependencies
+--> Running transaction check
+---> Package mariadb.x86_64 1:5.5.68-1.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch          Version                   Repository         Size
+================================================================================
+Installing:
+ mariadb        x86_64        1:5.5.68-1.amzn2          amzn2-core        8.8 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 8.8 M
+Installed size: 49 M
+Is this ok [y/d/N]: yes
+Downloading packages:
+mariadb-5.5.68-1.amzn2.x86_64.rpm                          | 8.8 MB   00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1
+  Verifying  : 1:mariadb-5.5.68-1.amzn2.x86_64                              1/1
+
+Installed:
+  mariadb.x86_64 1:5.5.68-1.amzn2
+
+Complete!
+[root@ip-10-2-11-92 ec2-user]# apt-get install mariadb-client
+bash: apt-get: command not found
+[root@ip-10-2-11-92 ec2-user]# apt-get install mariadb-client
+bash: apt-get: command not found
+[root@ip-10-2-11-92 ec2-user]# apt-get install mariadb -client
+bash: apt-get: command not found
+[root@ip-10-2-11-92 ec2-user]# apt -get install mariadb -client
+bash: apt: command not found
+[root@ip-10-2-11-92 ec2-user]# mysql --version
+mysql  Ver 15.1 Distrib 5.5.68-MariaDB, for Linux (x86_64) using readline 5.1
+[root@ip-10-2-11-92 ec2-user]# mysql -h udacity.cp6lhf5cvgzd.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 55
+Server version: 8.0.23 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.02 sec)
+
+MySQL [(none)]> create databases vitacoco;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases vitacoco' at line 1
+MySQL [(none)]> create databases vitcoco
+    -> This is cool
+    -> This is cool
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases vitcoco
+This is cool
+This is cool
+show databases' at line 1
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [(none)]> Create databases vitacoco;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases vitacoco' at line 1
+MySQL [(none)]> help
+
+General information about MariaDB can be found at
+http://mariadb.org
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with $EDITOR.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don't write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+
+For server side help, type 'help contents'
+
+MySQL [(none)]> use vitacoco
+ERROR 1049 (42000): Unknown database 'vitacoco'
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [(none)]> create databases vitacocoa
+    -> CREATETABLE Persons (
+    -> PersonID int,
+    -> LastName varchar(255),
+    -> FirstName varchar(255),
+    -> Address varchar(255),
+    -> City varchar(255)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases vitacocoa
+CREATETABLE Persons (
+PersonID int,
+LastName varchar(255),
+F' at line 1
+MySQL [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+MySQL [(none)]> create databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases' at line 1
+MySQL [(none)]> create database
+    -> CREATETABLE Persons (
+    -> personID int,
+    -> LastNAme varchahr(255),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Persons (
+personID int,
+LastNAme varchahr(255),
+)' at line 2
+MySQL [(none)]> create database xxx;
+Query OK, 1 row affected (0.02 sec)
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+5 rows in set (0.01 sec)
+
+MySQL [(none)]> use xxx;
+Database changed
+MySQL [xxx]> CREATETABLE Persons (
+    -> PersonID int,
+    -> LastName varchar(255),
+    -> FirstName varchar(255),
+    -> Address varchar(255),
+    -> City varchar(255)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATETABLE Persons (
+PersonID int,
+LastName varchar(255),
+FirstName varchar(255' at line 1
+MySQL [xxx]> CREATETABLE Persons (
+    -> PersonID int,
+    -> LastName varchar(255),
+    -> FirstName varchar(255),
+    -> Address varchar(255),
+    -> City varchar(255)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATETABLE Persons (
+PersonID int,
+LastName varchar(255),
+FirstName varchar(255' at line 1
+MySQL [xxx]> createtable Persons (
+    -> PersonID int,
+    -> LastName varchar(255),
+    -> FirstName varchar(255),
+    -> Address varchar(255),
+    -> City varchar(255)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'createtable Persons (
+PersonID int,
+LastName varchar(255),
+FirstName varchar(255' at line 1
+MySQL [xxx]>
+MySQL [xxx]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| xxx                |
++--------------------+
+5 rows in set (0.01 sec)
+
+MySQL [xxx]> CREATE TABLE books(
+    -> title VARCHAR(50) NOT NULL,
+    -> price INT NOT NULL,
+    -> language VARCHAR(50) DEFAULT "ENGLISH",
+    -> author VARCHAR(60) NOT NULL);
+Query OK, 0 rows affected (0.11 sec)
+
+MySQL [xxx]> DESCRIBE books;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| title    | varchar(50) | NO   |     | NULL    |       |
+| price    | int         | NO   |     | NULL    |       |
+| language | varchar(50) | YES  |     | ENGLISH |       |
+| author   | varchar(60) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+MySQL [xxx]> INSERT INTO books VALUE("Book Title", 50.00, "Helpme", "Author Name");
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [xxx]> SELECT * FROM books;
++------------+-------+----------+-------------+
+| title      | price | language | author      |
++------------+-------+----------+-------------+
+| Book Title |    50 | Helpme   | Author Name |
++------------+-------+----------+-------------+
+1 row in set (0.00 sec)
+
+MySQL [xxx]>
