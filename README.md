@@ -10,7 +10,7 @@ You will use a pre-made CloudFormation template to get you started. This will al
 
 Project Files
 
-    cloudformation: This folder contains the CloudFormation template.
-    s3: This folder contains artifacts of static website.
-    screenshots: This folder contains all the screenshots taken at time of doing project.
-    estimates.md: This file explains the RPO and RTO for the project setup.
+    CloudFormation template.
+    s3 static website.
+    screenshots containing all the relevant documented.
+    estimates.txt explains loosely the RPO and RTO for our project setup.
