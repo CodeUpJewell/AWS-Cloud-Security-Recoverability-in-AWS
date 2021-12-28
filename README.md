@@ -10,5 +10,6 @@ You will use a pre-made CloudFormation template to get you started. This will al
 
 Project Files
 
-    screenshots containing all the relevant documented.
-    estimates.txt explains loosely the RPO and RTO for our project setup.
+    Screenshots.png containing all the relevant information documented.
+    Estimates.txt explains loosely the RPO and RTO for our project setup.
+    Our CloudFormation template used.
