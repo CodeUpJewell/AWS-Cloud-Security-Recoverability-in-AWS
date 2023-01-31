@@ -1,4 +1,4 @@
-# AWS-Cloud-Security-Recoverability-in-AWS
+# Cloud-Security-Recoverability-in-AWS
 
 This is the first major project in Udacity AWS Cloud Architect Nanodegree.
 
